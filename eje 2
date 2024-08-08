@@ -1,0 +1,33 @@
+#include <iostream>
+#include <map>
+using namespace std;
+
+void funcion_entrada(int n,int x, int y,map<int, int>& coordenadas);
+void funcion_print(const map<int,int>& coordenadas);
+
+int main() {
+    int n;
+    cin>>n;
+    int x;
+    int y;
+    map<int, int> coordenadas;
+    
+    funcion_entrada( n, x, y,coordenadas);
+     funcion_print(coordenadas);
+}
+
+void funcion_entrada(int n,int x,int y,map<int, int>& coordenadas){
+    int i=0;
+    while(n!=i){
+        cin>>x;
+        cin>>y;
+        i++;
+         coordenadas[x] = y;
+    }
+}
+ 
+ void funcion_print(const map<int,int>& coordenadas){
+        for(const auto& item : coordenadas) {
+        cout << item.first << " " << item.second << endl;
+    }
+    }
